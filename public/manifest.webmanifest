@@ -1,0 +1,19 @@
+{
+  "name": "Sentinela - Monitor de Projetos",
+  "short_name": "Sentinela",
+  "description": "Monitore a saúde e disponibilidade dos seus projetos em tempo real",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#32CF8B",
+  "background_color": "#212529",
+  "icons": [
+    {
+      "src": "/zap-favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
