@@ -107,7 +107,7 @@ export default function StatsPanel({ projects, healthMap, activeTagFilters = [],
         )}
         <span className="text-gray-600 ml-auto">--live</span>
       </div>
-      <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-dark-700">
+      <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-y lg:divide-y-0 divide-dark-700">
         {rows.map((row) => (
           <div key={row.key} className="p-3 space-y-1">
             <div className="text-gray-600 uppercase tracking-wider text-[10px]">{row.key}</div>
