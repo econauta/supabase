@@ -176,15 +176,13 @@ export default function ProjectCard({
             onClick={handleWake}
             loading={waking}
             disabled={!project.is_active}
-            className="flex-1 text-xs"
+            className="flex-2 text-xs"
+            style={{ flex: '2 1 0%' }}
           >
             {t('projectCard.wakeNow')}
           </Button>
           <Button size="sm" variant="secondary" onClick={() => onViewDetails(project)} title={t('projectCard.viewDetails')}>
             [stats]
-          </Button>
-          <Button size="sm" variant="secondary" onClick={() => onViewLogs(project)} title={t('projectCard.viewLogs')}>
-            [logs]
           </Button>
           <Button size="sm" variant="ghost" onClick={() => onEdit(project)} title={t('projectCard.edit')}>
             [edit]
