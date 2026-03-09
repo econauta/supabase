@@ -30,7 +30,16 @@ function formatLastWake(lastWakeAt: string | null, neverLabel: string): string {
   const hours = Math.floor(minutes / 60);
   if (hours < 24) return `${hours}h`;
   const days = Math.floor(hours / 24);
+  const remainingHours = hours % 24;
+  if (remainingHours > 0) return `${days}d ${remainingHours}h`;
   return `${days}d`;
+}
+
+function getLastWakeColor(lastWakeAt: string | null): string {
+  if (!lastWakeAt) return 'text-gray-500';
+  const diff = Date.now() - new Date(lastWakeAt).getTime();
+  const days = diff / (1000 * 60 * 60 * 24);
+  return days >= 5 ? 'text-red-400' : 'text-gray-500';
 }
 
 export default function ProjectCard({
@@ -148,7 +157,7 @@ export default function ProjectCard({
           </div>
           <div className="flex items-center gap-2">
             <span className="text-gray-600 w-16 shrink-0">last_ping</span>
-            <span className="text-gray-500">{lastWakeLabel}</span>
+            <span className={getLastWakeColor(project.last_wake_at)}>{lastWakeLabel}</span>
           </div>
 
           <div className="border-t border-dark-700/60 pt-2 mt-2">
